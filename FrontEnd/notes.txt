@@ -1,0 +1,6 @@
+1. Data dari Sidebar
+2. Jika diklik, datanya, maka hilang dan ditambahkan ke Sesi
+
+Berarti:
+1. Function untuk menghapus data yang ada di sidebar dan menambahkan ke Sesi
+2. 

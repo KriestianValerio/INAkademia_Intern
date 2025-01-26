@@ -1,0 +1,38 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "This is InAkademia's BackEnd",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "manager": "node -r dotenv/config ./cli/index.js"
+  },
+  "author": "InAkademia's Web Division",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "commander": "^12.1.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "gridfs-stream": "^1.1.1",
+    "inquirer": "^10.1.2",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.30.1",
+    "mongodb": "^6.7.0",
+    "mongoose": "^6.13.5",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4",
+    "multer-gridfs-storage": "^5.0.2",
+    "nodemailer": "^6.9.14",
+    "nodemon": "^3.1.4",
+    "path": "^0.12.7",
+    "uuid": "^10.0.0"
+  },
+  "keywords": []
+}

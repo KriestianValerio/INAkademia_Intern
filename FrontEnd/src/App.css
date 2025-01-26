@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: "ClashDisplay";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(./Fonts/ClashDisplay-Medium.otf) format("truetype");
+    }
+    @font-face {
+        font-family: "PlusJakartaSansMed";
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(./Fonts/PlusJakartaSans-Medium.ttf) format("truetype");
+    }
+    @font-face {
+        font-family: "PlusJakartaSans", sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(Fonts/PlusJakartaSans-SemiBold.ttf);
+    }
+}
+
+.react-pdf__Page {
+    margin-top: 10px;
+}
+.react-pdf__Page__textContent {
+    border: 1px solid darkgrey;
+    box-shadow: 5px 5px 5px 1px #ccc;
+    border-radius: 5px;
+}
+
+.react-pdf__Page__annotations.annotationLayer {
+    padding: 20px;
+}
+
+/* .react-pdf__Page__canvas {
+    margin: 0 auto;
+} */
+
+/* For all pages */
+/* .all-page-container {
+    height: 100%;
+    max-height: 500px;
+    overflow: auto;
+} */
+
+.css-13cymwt-control {
+    border-radius: 100px !important;
+}
+
+.react-datepicker__input-time-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    outline: none;
+}
+
+.filepond--panel-root {
+    background: #fff !important;
+}
+
+input[type="checkbox"] {
+    border-radius: 4px;
+    border: none;
+}
+
+.filepond--label-action {
+    color: #0185ff;
+    text-decoration: none !important;
+}
+
+.filepond--root .filepond--drop-label {
+    min-height: 9em !important;
+}
+
+.filepond--root {
+    border-radius: 200px !important;
+    margin-bottom: 0px !important;
+}
+.filepond--credits {
+    display: none;
+}
+
+.filepond-label {
+    font-size: 12px !important;
+    padding: 20px;
+    color: #aeaeae;
+    font-weight: 500;
+}
+
+.filepond-image {
+    position: relative;
+    background-image: url("data:image/svg+xml,%3Csvg%20width%3D%22115%22%20height%3D%22112%22%20viewBox%3D%220%200%20115%20112%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M38.334%2079.3335L57.5007%2098.0002L76.6673%2079.3335%22%20stroke%3D%22%23E3E3E3%22%20stroke-opacity%3D%220.5%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M57.5%2056V98%22%20stroke%3D%22%23E3E3E3%22%20stroke-opacity%3D%220.5%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3Cpath%20d%3D%22M100.049%2084.4202C104.215%2081.5672%20107.339%2077.4956%20108.968%2072.7962C110.597%2068.0968%20110.646%2063.0143%20109.107%2058.286C107.569%2053.5578%20104.524%2049.4299%20100.414%2046.5015C96.3036%2043.573%2091.3421%2041.9963%2086.2493%2042.0002H80.2118C78.7707%2036.5303%2076.0742%2031.45%2072.3253%2027.1419C68.5765%2022.8338%2063.873%2019.4101%2058.5689%2017.1285C53.2648%2014.8469%2047.4984%2013.767%2041.7037%2013.9699C35.9091%2014.1729%2030.2372%2015.6534%2025.1151%2018.3002C19.993%2020.9469%2015.5542%2024.6908%2012.1327%2029.25C8.71131%2033.8093%206.39647%2039.0651%205.36247%2044.6217C4.32847%2050.1783%204.60227%2055.891%206.16325%2061.3296C7.72423%2066.7683%2010.5317%2071.7912%2014.3743%2076.0202%22%20stroke%3D%22%23E3E3E3%22%20stroke-opacity%3D%220.5%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.link-underline {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent),
+        linear-gradient(#fff, #fff);
+    background-size: 0 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s ease-in-out;
+}
+
+.link-underline-static {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent),
+        linear-gradient(#fff, #fff);
+    background-size: 100% 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s ease-in-out;
+}
+
+.link-underline-alasan {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent),
+        linear-gradient(#fff, #fff);
+    background-size: 0 2px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s ease-in-out;
+}
+
+.link-underline-white {
+    background-image: linear-gradient(transparent, transparent),
+        linear-gradient(#fff, #fff);
+}
+.link-underline-black {
+    background-image: linear-gradient(transparent, transparent),
+        linear-gradient(#000000, #000000);
+}
+
+.link-underline:hover {
+    background-size: 100% 3px;
+    background-position: 0 100%;
+}
+
+.link-underline-alasan:hover {
+    background-size: 100% 2px;
+    background-position: 0 100%;
+}
+
+.hover-zoom {
+    transition: transform 0.2s;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.2);
+}
+
+.videosize {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}

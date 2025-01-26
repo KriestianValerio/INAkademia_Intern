@@ -1,0 +1,53 @@
+version: "3"
+
+services:
+  traefik:
+    image: traefik:v3.3
+    container_name: traefik
+    command:
+      - "--providers.docker=true" # Enable Docker provider
+      - "--entrypoints.web.address=:80" # Web entry point (HTTP)
+      - "--entrypoints.websecure.address=:443" # Secure entry point (HTTPS)
+      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+      - "--certificatesresolvers.myresolver.acme.email=inakademia.hub@gmail.com"
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+    ports:
+      - "8080:8080" # Expose HTTP for Let's Encrypt validation
+      - "443:443" # Expose HTTPS for secure connections
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro" # Docker socket
+      - "./letsencrypt:/letsencrypt"
+    restart: unless-stopped
+
+  mongo:
+    image: mongo
+    container_name: mongo-container
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    build: ./backend
+    container_name: backend-container
+    labels:
+      - "traefik.http.routers.backend.rule=Host(`api.inakademia.com`)"
+      - "traefik.http.routers.backend.entrypoints=websecure" # Use HTTPS
+      - "traefik.http.routers.backend.tls.certresolver=myresolver" # Use Let's Encrypt
+      - "traefik.http.services.backend.loadbalancer.server.port=5001"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/mydatabase
+    depends_on:
+      - mongo
+
+  frontend:
+    build: ./frontend
+    container_name: frontend-container
+    labels:
+      - "traefik.http.routers.frontend.rule=Host(`inakademia.com`) || Host(`www.inakademia.com`)"
+      - "traefik.http.routers.frontend.entrypoints=websecure" # Use HTTPS
+      - "traefik.http.routers.frontend.tls.certresolver=myresolver" # Use Let's Encrypt
+      - "traefik.http.services.frontend.loadbalancer.server.port=3000"
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:
